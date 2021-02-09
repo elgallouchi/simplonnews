@@ -1,0 +1,149 @@
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+header {
+    background-color: #CE0033;
+    height: 55px;
+}
+
+header a img {
+    height: 60%;
+    margin: 3px;
+}
+
+.colonne {
+    width: 110px;
+    height: 600px;
+    background-color: #C4C4C4;
+    margin-left: 13%;
+    z-index: 1;
+    position: relative;
+}
+
+.container-form-connexion {
+    width: 88%;
+    height: 75%;
+    z-index: 2;
+    position: absolute;
+    top: 15%;
+    left: 6%;
+    background-color: white;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: space-between;
+    
+    
+
+}
+
+.form-image {
+    width: 35%;  
+}
+
+.form-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+
+.box-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 65%;
+    padding: 15% 10% 15% 10%;
+}
+
+form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+} 
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+.text {
+    background-color: #C4C4C4;
+    border: none;
+    padding: 5%;
+    width: 100%;
+}
+
+.valider {
+    background: #504DC1;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 5%;
+}
+
+
+
+.box-form a {
+    text-decoration: none;
+    color: #646464;
+    font-size: 13px;
+    margin-top: 10px;
+  
+
+}
+
+.creation-compte {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.creation-compte input {
+    background-color: #C4C4C4;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 5px;
+ 
+}
+
+
+
+.container-form-register {
+    width: 88%;
+    height: 75%;
+    z-index: 2;
+    position: absolute;
+    top: 15%;
+    left: 6%;
+    background-color: white;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+
+/* FOOTER */
+footer {
+    height: 70px;
+    background-color: #CE0033;
+    display: flex;
+    justify-content: center;
+}
+
+
+.box-icones i {
+    color: white;
+}
