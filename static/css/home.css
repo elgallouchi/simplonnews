@@ -1,0 +1,127 @@
+/* @font-face {
+    font-family: 'nunito';
+    src:url(../fonts/Nunito-Regular.ttf) format('ttf');
+} */
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+/* First element */
+article:first-of-type {
+  background-color: #ce0033;
+  color: #fff;
+  margin-top: 2em;
+}
+article:first-of-type .article-titre a {
+  color: #fff;
+}
+article:first-of-type .article-lire a {
+  background-color: #fff;
+  color: #ce0033;
+}
+/* end first element */
+
+.titre-categorie h3 {
+  border-bottom: 2px solid #ce0033;
+  margin: 1em 0 .5em;
+  padding-bottom: .5em;
+  font-size: 1.5em;
+}
+article {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 2em;
+  font-family: "nunito", sans-serif;
+}
+.article-image {
+  width: 100%;
+  height: 220px;
+}
+.article-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.article-titre {
+  text-transform: capitalize;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #ddd;
+  margin: 1em 0;
+}
+.article-titre a {
+  color: #ce0033;
+  text-decoration: none;
+  font-size: 1em;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.article-description {
+  margin: 1em 0;
+  font-size: 1.3em;
+
+  word-break: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.article-lire {
+  display: flex;
+  justify-content: flex-end;
+}
+.article-lire a {
+  background-color: #ce0033;
+  padding: 0.3em 0.5em;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.2em;
+  text-align: center;
+}
+
+/* Desktop Version */
+@media screen and (min-width: 600px) {
+  .container {
+    width: 80%;
+  }
+  section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  article {
+    width: 45%;
+  }
+  article:first-of-type {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  article:first-of-type .article-image {
+    width: 50%;
+    padding-right: 1em;
+    min-height: 20vw;
+  }
+  article:first-of-type .article-lire {
+  }
+  article:first-of-type .article-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+  }
+}
+
+/* 
+.article-titre a:hover {
+    border-bottom: 2px solid #CE0033;
+} */
