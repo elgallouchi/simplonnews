@@ -1,19 +1,18 @@
 
 .colonne {
     width: 110px;
-    height: 600px;
+    height: 534px;
     background-color: #C4C4C4;
     margin-left: 13%;
     z-index: 1;
-    position: relative;
 }
 
 .container-form-connexion {
     width: 65%;
-    height: 60%;
+    height: 55%;
     z-index: 2;
-    position: absolute;
-    top: 15%;
+    position: fixed;
+    top: 25%;
     left: 6%;
     background-color: white;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
@@ -35,7 +34,7 @@
 
 h2 {
     margin-bottom: 10px;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .box-form {
@@ -106,10 +105,10 @@ form {
 
 .container-form-register {
     width: 65%;
-    height: 60%;
+    height: 55%;
     z-index: 2;
-    position: absolute;
-    top: 15%;
+    position: fixed;
+    top: 25%;
     left: 6%;
     background-color: white;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
