@@ -14,7 +14,7 @@ let headerHTML = `
         <div class="display-profil">
             <ul>
                 <li><i class="fas fa-user-circle"></i><a href="#">Voir Profil</a></li>
-                <li><i class="fas fa-plus-circle"></i><a href="#">Nouvel Article</a></li>
+                <li><i class="fas fa-plus-circle"></i><a href="./nouvel_article.html">Nouvel Article</a></li>
                 <li><i class="fas fa-comment"></i><a href="#">Messages</a></li>
                 <li><i class="fas fa-sign-out-alt"></i><a href="#">Déconnexion</a></li>
             </ul>
