@@ -15,3 +15,51 @@ boutonConnexion.addEventListener('click', () => {
     boxConnexion.style.display = "flex";
 })
 
+// AUTHENTIFICATION user
+
+
+let inputSubmit = document.querySelector("[type=submit]");
+console.log(inputSubmit);
+
+inputSubmit.addEventListener('click', function(e) {
+    let inputEmail = document.querySelector("[type=email]").value;
+    let inputPassword = document.querySelector("[type=password]").value;    
+    connexion(inputEmail, inputPassword)
+})
+
+function connexion(email, password) {
+
+let fetch_config = {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        "email": email,
+        "password": password,
+    })
+}
+
+fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
+.then(function (response) {
+        response.json()
+        .then(function(data) {
+            if (response.status == 400) {
+                console.log('data');
+            }
+            else {
+                console.log(data);
+                console.log('OK')
+                window.location.href = "./static/views/home.html"
+            }  
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+
+})
+.catch(function (errors) {
+
+})
+
+}
