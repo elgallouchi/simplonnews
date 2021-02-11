@@ -15,6 +15,16 @@ boutonConnexion.addEventListener('click', () => {
     boxConnexion.style.display = "flex";
 })
 
+
+// Mot de passe oublié
+
+let forgotPassword = document.getElementById('forgot')
+
+forgotPassword.addEventListener('click', () => {
+    prompt('Entrez votre adresse email pour recevoir un lien de réinitialisation de votre mot de passe');
+    
+})
+
 // AUTHENTIFICATION user
 
 
@@ -45,7 +55,7 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
         response.json()
         .then(function (data) {
             if (response.status == 400) {
-                alert('user non identifié')
+                alert('Entrer un email et un mot de passe valides')
             }
             else {
                 console.log('OK')
@@ -123,7 +133,18 @@ function inscriptionNewUser(prenom, nom, email, password) {
 }
 
 
+// Gestion d'erreurs formulaire
 
+function validateForm(input_tab) {
+    for (let i=0; i< input_tab.length; i++) {
+        const element = input_tab[i];
+
+        if (element.value == null || element.value == "")
+            return false;
+    }
+
+    return true;
+}
 
 
 
