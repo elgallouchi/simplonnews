@@ -1,11 +1,11 @@
 // SWITCH page connexion à page inscription
 
-let boutonInscription = document.getElementById('inscription')
+let boutonSInscrire = document.getElementById('inscription')
 let boxRegister = document.querySelector('.container-form-register')
 let boxConnexion = document.querySelector('.container-form-connexion')
 let boutonConnexion = document.getElementById('connexion')
 
-boutonInscription.addEventListener('click', () => {
+boutonSInscrire.addEventListener('click', () => {
     boxConnexion.style.display = "none";
     boxRegister.style.display = "flex";
 })
@@ -18,12 +18,12 @@ boutonConnexion.addEventListener('click', () => {
 // AUTHENTIFICATION user
 
 
-let inputSubmit = document.querySelector("[type=submit]");
-console.log(inputSubmit);
+let inputSubmit = document.querySelector("[name=valider-connexion]");
 
-inputSubmit.addEventListener('click', function(e) {
-    let inputEmail = document.querySelector("[type=email]").value;
-    let inputPassword = document.querySelector("[type=password]").value;    
+
+inputSubmit.addEventListener('click', function() {
+    let inputEmail = document.querySelector("[name=email-connexion]").value;
+    let inputPassword = document.querySelector("[name=password-connexion]").value;    
     connexion(inputEmail, inputPassword)
 })
 
@@ -46,11 +46,12 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
         .then(function(data) {
             if (response.status == 400) {
                 console.log('data');
+                alert('user non identifié')
             }
             else {
                 console.log(data);
                 console.log('OK')
-                window.location.href = "./static/views/home.html"
+                // window.location.href = "./static/views/home.html"
             }  
         })
         .catch(function(error){
@@ -66,37 +67,59 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
 
 // INSCRIPTION New user
 
-let fetch_config2 = {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        "firstName": "toto",
-        "lastName": "tata",
-        "email": "hellloooow@test.fr",
-        "password": "unsupermotdepasse",
+let boutonInscription = document.querySelector("[name=bouton-inscription]")
+
+boutonInscription.addEventListener('click', function() {
+    let prenomInscription = document.querySelector("[name=prenom-inscription]").value
+    let nomInscription = document.querySelector("[name=nom-inscription]").value
+    let emailInscription = document.querySelector("[name=email-inscription]").value
+    let passwordInscription = document.querySelector("[name=password-inscription]").value
+   
+    inscriptionNewUser(prenomInscription, nomInscription, emailInscription, passwordInscription)
+})
+
+function inscriptionNewUser(prenom, nom, email, password) {
+    let fetch_config2 = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "firstName": prenom,
+            "lastName": nom,
+            "email": email,
+            "password": password,
+        })
+    }
+    
+    fetch("https://simplonews.brianboudrioux.fr/users", fetch_config2)
+    .then(function (response) {
+        
+            console.log('success');
+            response.json()
+            .then(function(data) {
+                if (response.status == 400) {
+                    console.log('data');
+                }
+                else {
+                    console.log(data);
+                    console.log("utilisateur inscrit")
+                    boxRegister.style.display = "none";
+                    boxConnexion.style.display = "flex";
+                }  
+            })
+            .catch(function(error){
+                console.log(error)
+            })
+        
+    })
+    .catch(function (errors) {
+    
     })
 }
 
-fetch("https://simplonews.brianboudrioux.fr/users", fetch_config2)
-.then(function (response) {
-    
-        console.log('success');
-        response.json()
-        .then(function(data) {
-            if (response.status == 400) {
-                console.log('data');
-            }
-            else {
-                console.log(data);
-            }  
-        })
-        .catch(function(error){
-            console.log(error)
-        })
-    
-})
-.catch(function (errors) {
 
-})
+
+
+
+
