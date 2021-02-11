@@ -58,11 +58,9 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
                 alert('Entrer un email et un mot de passe valides')
             }
             else {
-                console.log('OK')
-                
                 let token = data.token;
-                console.log('token')
-
+                // console.log('token')
+                // console.log(data);
                 sessionStorage.setItem('token', token);
 
                 window.location.href = "./static/views/home.html"

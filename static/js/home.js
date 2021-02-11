@@ -74,7 +74,10 @@ fetch("https://simplonews.brianboudrioux.fr/articles", {
                 } else if (response.status === 403) {
                     // window.location.href = "/link";
                 } else {
-                    console.log(response);
+                    let arrayReversed = response.articles.reverse();
+                    if (!arrayReversed) {
+                        document.querySelector('.container').innerHTML = "attent !";
+                    }
                     generateArticle(response.articles);
                 }
             })

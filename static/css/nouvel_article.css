@@ -101,9 +101,6 @@ aside {
     justify-content: space-between;
     align-items: center;
   }
-  aside div ul li:: {
-    content: counter(item);
-  }
   aside div ul li:nth-of-type(even) {
     background-color: #eee;
   }
