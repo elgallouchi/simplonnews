@@ -1,0 +1,168 @@
+
+.colonne {
+    width: 110px;
+    height: 600px;
+    background-color: #C4C4C4;
+    margin-left: 13%;
+    z-index: 1;
+}
+
+.container-form-connexion {
+    width: 65%;
+    height: 60%;
+    z-index: 2;
+    position: fixed;
+    top: 15%;
+    left: 6%;
+    background-color: white;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+        
+
+}
+
+.form-image {
+    width: 35%;  
+}
+
+.form-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.box-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 65%;
+    height: 100%;
+    padding: 15% 10% 15% 10%;
+}
+
+form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+} 
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+.text {
+    background-color: #C4C4C4;
+    border: none;
+    padding: 5%;
+}
+
+.valider {
+    background: #504DC1;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 5%;
+}
+
+
+
+.box-form a {
+    text-decoration: none;
+    color: #646464;
+    font-size: 13px;
+    margin-top: 10px;
+
+}
+
+.creation-compte {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.creation-compte input {
+    background-color: #C4C4C4;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+
+
+.container-form-register {
+    width: 65%;
+    height: 60%;
+    z-index: 2;
+    position: fixed;
+    top: 15%;
+    left: 6%;
+    background-color: white;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    display: none;
+     
+}
+
+
+@media screen and (max-width: 815px) {
+    .container-form-connexion {
+        height: 75%;
+    }
+    .container-form-register {
+        height: 75%;
+    }
+
+    /* .box-form {
+        padding-left: 3%;
+    } */
+}
+
+
+@media screen and (max-width: 770px) {
+    .form-image {
+        display: none;
+    }
+
+    .container-form-connexion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container-form-register {
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .creation-compte {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    p {
+        font-size: 13px;
+    }
+
+    .text {
+        width: 6rem;
+    }
+}
