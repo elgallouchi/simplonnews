@@ -14,3 +14,4 @@ boutonConnexion.addEventListener('click', () => {
     boxRegister.style.display = "none";
     boxConnexion.style.display = "flex";
 })
+

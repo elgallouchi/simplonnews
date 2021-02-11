@@ -1,7 +1,7 @@
 
 .colonne {
     width: 110px;
-    height: 534px;
+    height: 600px;
     background-color: #C4C4C4;
     margin-left: 13%;
     z-index: 1;
@@ -9,10 +9,10 @@
 
 .container-form-connexion {
     width: 65%;
-    height: 55%;
+    height: 60%;
     z-index: 2;
     position: fixed;
-    top: 25%;
+    top: 15%;
     left: 6%;
     background-color: white;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
@@ -42,6 +42,7 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
     width: 65%;
+    height: 100%;
     padding: 15% 10% 15% 10%;
 }
 
@@ -65,7 +66,6 @@ form {
     background-color: #C4C4C4;
     border: none;
     padding: 5%;
-    width: 100%;
 }
 
 .valider {
@@ -105,10 +105,10 @@ form {
 
 .container-form-register {
     width: 65%;
-    height: 55%;
+    height: 60%;
     z-index: 2;
     position: fixed;
-    top: 25%;
+    top: 15%;
     left: 6%;
     background-color: white;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
@@ -118,7 +118,18 @@ form {
 }
 
 
+@media screen and (max-width: 815px) {
+    .container-form-connexion {
+        height: 75%;
+    }
+    .container-form-register {
+        height: 75%;
+    }
 
+    /* .box-form {
+        padding-left: 3%;
+    } */
+}
 
 
 @media screen and (max-width: 770px) {
@@ -149,5 +160,9 @@ form {
 @media screen and (max-width: 500px) {
     p {
         font-size: 13px;
+    }
+
+    .text {
+        width: 6rem;
     }
 }

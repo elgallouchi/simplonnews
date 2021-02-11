@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f0f0f0;
+}
+    
+.container-articles {
+    display: flex;
+    padding: 1% ;
+}
+
+
+.articleContent {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    background-color: white;
+    padding: 1%;
+    font-size:100%;
+}
+
+.articleContent > img {
+    max-width: 100%;
+}
+
+.articleContent > p {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    margin: 1%;
+    line-height: 1.5;
+    text-align: justify;
+
+}
+
+@media screen and (max-width: 815px) {
+    .articleContent {
+        max-width: 100%;
+    }
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+@media screen and (max-width: 815px) {
+    aside {
+        display: none;
+    }
+}
+
+aside > img {
+    max-width: 100%;
+    margin: 1%;
+}
+
+h1 {
+    /* titre article */
+    font-size: clamp(2.5rem, 4vw, 4rem); 
+    line-height: 1.2;
+    margin: 1%;
+    font-weight: normal;
+}
+
+h2 {
+    /* resumé article */
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    margin: 1%;
+    font-weight: normal;
+    font-style: italic;
+    text-align: justify;
+}
+
+h3 {
+    /* author article */
+    font-size: clamp(1.7rem, 2vw, 2.2rem);
+    margin: 1%;
+    font-weight: normal;
+}
+
+h3 > span {
+    font-weight: bold;
+}
+
+h4 {
+    /* titre aside */
+    font-size: clamp(2rem, 2vw, 2.5rem);
+    font-style: italic;
+    margin-top: 1%;
+}
+
+/* h5 {
+   
+    font-size: clamp(1.5rem, 1.5vw, 1.7rem);
+    margin-top: 1%;
+    margin-bottom: 5%;
+    font-weight: normal;
+    font-style: italic;
+    text-align: justify;
+} */
