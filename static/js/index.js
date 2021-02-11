@@ -63,3 +63,40 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
 })
 
 }
+
+// INSCRIPTION New user
+
+let fetch_config2 = {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        "firstName": "toto",
+        "lastName": "tata",
+        "email": "hellloooow@test.fr",
+        "password": "unsupermotdepasse",
+    })
+}
+
+fetch("https://simplonews.brianboudrioux.fr/users", fetch_config2)
+.then(function (response) {
+    
+        console.log('success');
+        response.json()
+        .then(function(data) {
+            if (response.status == 400) {
+                console.log('data');
+            }
+            else {
+                console.log(data);
+            }  
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+    
+})
+.catch(function (errors) {
+
+})
