@@ -55,9 +55,10 @@ faUserCircle.addEventListener('click', () => {
 })
 
 // on line if token true
-let tokenOnLine = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {});
+
+let tokenStorageHeader = sessionStorage.getItem('token');
 let onLine = document.querySelector('.profil span .fa-circle');
-if (tokenOnLine.token) {
+if (tokenStorageHeader) {
     onLine.style.display = "flex"
 } else {
     onLine.style.display = "none";

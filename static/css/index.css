@@ -112,13 +112,17 @@ h2 {
      
 }
 
+.profil {
+    display: none;
+}
+
 
 @media screen and (max-width: 815px) {
     .container-form-connexion {
-        height: 75%;
+        height: auto;
     }
     .container-form-register {
-        height: 75%;
+        height: auto;
     }
 
     .form-image {

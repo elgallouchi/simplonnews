@@ -1,11 +1,9 @@
+// VERIFICATION du token
 
-// redirrection if no cookie
-let tokenOnLineHome = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {});
-let onLineHome = document.querySelector('.profil span .fa-circle');
-if (!tokenOnLineHome.token) {
-    window.location.href = "/"
-}
-
+let tokenStorage = sessionStorage.getItem('token');
+    if(!tokenStorage) {
+        window.location.href = "/"
+    }
 
 function addAdsBanner() {
     // add ads element in home
@@ -22,7 +20,8 @@ function addAdsBanner() {
 
 
 // get token
-let token = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {});
+// let token = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {});
+
 
 
 // ------------------------------------------------- get users
@@ -62,7 +61,7 @@ function generateArticle(responseArticles) {
 fetch("https://simplonews.brianboudrioux.fr/articles", {
     method: "GET",
     headers: {
-        "Authorization": "Bearer " + token.token,
+        "Authorization": "Bearer " + tokenStorage,
     }
 })
     .then(function (response) {

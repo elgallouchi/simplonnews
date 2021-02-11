@@ -43,15 +43,19 @@ let fetch_config = {
 fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
 .then(function (response) {
         response.json()
-        .then(function(data) {
+        .then(function (data) {
             if (response.status == 400) {
-                console.log('data');
                 alert('user non identifié')
             }
             else {
-                console.log(data);
                 console.log('OK')
-                // window.location.href = "./static/views/home.html"
+                
+                let token = data.token;
+                console.log('token')
+
+                sessionStorage.setItem('token', token);
+
+                window.location.href = "./static/views/home.html"
             }  
         })
         .catch(function(error){
