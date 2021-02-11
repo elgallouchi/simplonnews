@@ -1,7 +1,3 @@
-/* @font-face {
-    font-family: 'nunito';
-    src:url(../fonts/Nunito-Regular.ttf) format('ttf');
-} */
 
 .container {
   width: 90%;
@@ -9,24 +5,25 @@
 }
 /* First element */
 article:first-of-type {
-  background-color: #ce0033;
-  color: #fff;
+  background-color: #fff;
   margin-top: 2em;
+  border: 2px solid #ce0033;
 }
 article:first-of-type .article-titre a {
-  color: #fff;
+  color: #ce0033;
 }
 article:first-of-type .article-lire a {
-  background-color: #fff;
-  color: #ce0033;
+  background-color: #ce0033;
+  color: #fff;
 }
 /* end first element */
 
 .titre-categorie h3 {
   border-bottom: 2px solid #ce0033;
-  margin: 1em 0 .5em;
-  padding-bottom: .5em;
+  margin: 1em 0 0.5em;
+  padding-bottom: 0.5em;
   font-size: 1.5em;
+  width: max-content;
 }
 article {
   background-color: #fff;
@@ -87,6 +84,32 @@ article {
   text-align: center;
 }
 
+/* ADS */
+.ads {
+  margin: auto;
+  max-width: 100%;
+  width: 336px;
+  height: 280px;
+  background-color: #fff;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ads div {
+  font-size: 3em;
+  text-align: center;
+  color: #aaa;
+  background-color: #ff0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Desktop Version */
 @media screen and (min-width: 600px) {
   .container {
@@ -119,9 +142,8 @@ article {
     justify-content: space-between;
     width: 50%;
   }
+  .ads {
+    width: 748px;
+    height: 110px;
+  }
 }
-
-/* 
-.article-titre a:hover {
-    border-bottom: 2px solid #CE0033;
-} */

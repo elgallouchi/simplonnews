@@ -1,14 +1,24 @@
+const url = '../../static/img/logo_simplon_news.png';
+
 // Header
 let header = document.querySelector('header');
 let headerHTML = `
 <div class="container">
     <div class="logo">
         <a href="/">
-            <img src="../img/logo_simplon_news.png" alt="logo simplon news">
+            <img src="${url}" alt="logo simplon news">
         </a>
     </div>
-    <div class="profile">
-        <i class="fas fa-user-circle" title="profile"></i>
+    <div class="profil">
+        <span>Mon compte <i class="fas fa-user-circle" title="profil"></i><i class="fas fa-circle" title="en ligne"></i></span>
+        <div class="display-profil">
+            <ul>
+                <li><i class="fas fa-user-circle"></i><a href="#">Voir Profil</a></li>
+                <li><i class="fas fa-plus-circle"></i><a href="#">Nouvel Article</a></li>
+                <li><i class="fas fa-comment"></i><a href="#">Messages</a></li>
+                <li><i class="fas fa-sign-out-alt"></i><a href="#">Déconnexion</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 `;
@@ -20,9 +30,9 @@ let footerHTML = `
 <div class="container">
     <div class="social-media">
         <ul>
-            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-            <li><a href=""><i class="fab fa-github-square"></i></a></li>
-            <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fab fa-github-square"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
         </ul>
     </div>
     <div class="copyright">
@@ -31,3 +41,24 @@ let footerHTML = `
 </div>
 `;
 footer.innerHTML = footerHTML;
+
+// dispaly profile
+let faUserCircle = document.querySelector('.profil > span');
+
+faUserCircle.addEventListener('click', () => {
+    let displayProfil = document.querySelector('.display-profil');
+    if (displayProfil.style.display === 'flex') {
+        displayProfil.style.display = "none";
+    } else {
+        displayProfil.style.display = "flex";
+    }
+})
+
+// on line if token true
+let tokenOnLine = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {});
+let onLine = document.querySelector('.profil span .fa-circle');
+if (tokenOnLine.token) {
+    onLine.style.display = "flex"
+} else {
+    onLine.style.display = "none";
+}
