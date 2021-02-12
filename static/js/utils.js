@@ -69,6 +69,6 @@ window.onload = function() {
 let deconnexionBtn = document.querySelector('.deconnexion');
 deconnexionBtn.addEventListener('click', function() {
     sessionStorage.removeItem('token');
-    window.location.href = "./inedx.html";
+    window.location.href = "../index.html";
 })
 }

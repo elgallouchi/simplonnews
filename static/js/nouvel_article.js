@@ -1,7 +1,7 @@
 // get token from localstorage
 let tokenStorage = sessionStorage.getItem('token');
 if (!tokenStorage) {
-    window.location.href = "./index.html"
+    window.location.href = "../index.html"
 }
 
 function generateSelectHtml(responseCategories) {
