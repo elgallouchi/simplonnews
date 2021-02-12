@@ -91,6 +91,10 @@ header .profil > span > .fa-user-circle {
   bottom: -3px;
   display: none;
 }
+.display-profil ul li:hover i,
+.display-profil ul li:hover a {
+  color: #ce0033;
+}
 /* Footer */
 footer {
   background-color: #ce0033;
