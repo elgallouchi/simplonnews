@@ -66,11 +66,9 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
                 
             }
             else {
-                console.log('OK')
-                
                 let token = data.token;
-                console.log('token')
-
+                // console.log('token')
+                // console.log(data);
                 sessionStorage.setItem('token', token);
 
                 window.location.href = "./static/views/home.html"

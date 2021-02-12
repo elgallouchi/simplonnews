@@ -2,7 +2,7 @@
 
 let tokenStorage = sessionStorage.getItem('token');
     if(!tokenStorage) {
-        window.location.href = "/"
+        window.location.href = "../index.html"
     }
 
 function addAdsBanner() {
@@ -27,11 +27,12 @@ function addAdsBanner() {
 // ------------------------------------------------- get users
 function generateArticle(responseArticles) {
 
+
     let target = document.querySelector('main .container section');
     let output = '';
     responseArticles.forEach(article => {
         output += `
-    <article>
+                <article>
                     <div class="article-image">
                         <a href="./article.html/${article.id}">
                             <img src="${article.img}"
@@ -58,6 +59,7 @@ function generateArticle(responseArticles) {
     addAdsBanner();
 }
 
+
 fetch("https://simplonews.brianboudrioux.fr/articles", {
     method: "GET",
     headers: {
@@ -68,10 +70,14 @@ fetch("https://simplonews.brianboudrioux.fr/articles", {
         response.json()
             .then(function (response) {
                 if (response.status === 400) {
-                    window.location.href = "/kilk";
+                    // window.location.href = "/kilk";
                 } else if (response.status === 403) {
-                    window.location.href = "/link";
+                    // window.location.href = "/link";
                 } else {
+                    let arrayReversed = response.articles.reverse();
+                    if (!arrayReversed) {
+                        document.querySelector('.container').innerHTML = "attent !";
+                    }
                     generateArticle(response.articles);
                 }
             })

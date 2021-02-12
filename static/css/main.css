@@ -68,6 +68,7 @@ header .profil > span > .fa-user-circle {
   padding: 0.5em 0;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .display-profil ul li a {
   text-decoration: none;
@@ -81,14 +82,18 @@ header .profil > span > .fa-user-circle {
 .profil span .fa-circle {
   color: #5ebd3e;
   border-radius: 50%;
-  padding: 4px;
+  padding: 3px;
   margin: 0;
   font-size: 0.8em;
   background-color: #ce0033;
   position: absolute;
-  right: -10px;
-  bottom: 0px;
+  right: -4px;
+  bottom: -3px;
   display: none;
+}
+.display-profil ul li:hover i,
+.display-profil ul li:hover a {
+  color: #ce0033;
 }
 /* Footer */
 footer {
