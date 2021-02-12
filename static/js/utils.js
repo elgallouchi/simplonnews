@@ -5,7 +5,7 @@ let header = document.querySelector('header');
 let headerHTML = `
 <div class="container">
     <div class="logo">
-        <a href="/">
+        <a href="./index.html">
             <img src="${url}" alt="logo simplon news">
         </a>
     </div>
@@ -69,6 +69,6 @@ window.onload = function() {
 let deconnexionBtn = document.querySelector('.deconnexion');
 deconnexionBtn.addEventListener('click', function() {
     sessionStorage.removeItem('token');
-    window.location.href = "/";
+    window.location.href = "./inedx.html";
 })
 }
