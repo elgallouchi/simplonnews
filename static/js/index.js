@@ -62,7 +62,7 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
         response.json()
         .then(function (data) {
             if (response.status == 400) {
-                
+                alert('Entrer un email et un mot de passe valides')
             }
             else {
                 let token = data.token;
