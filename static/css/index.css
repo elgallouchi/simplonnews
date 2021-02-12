@@ -1,17 +1,24 @@
 
-.colonne {
+main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .colonne {
+
     width: 110px;
-    height: 3.5rem;
+    height: 20vh;
     background-color: #C4C4C4;
     margin-left: 12%;
     
     
-}
+} */
 
 .container-form-connexion {
     width: 65%;
-    height: 60%;
-    margin-left: 6%;
+    margin: 2rem 0;
     background-color: white;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -20,7 +27,8 @@
 }
 
 .form-image {
-    width: 35%;  
+    width: 35%;
+    
 }
 
 .form-image img {
@@ -40,7 +48,7 @@ h2 {
     justify-content: space-around;
     align-items: flex-start;
     width: 65%;
-    padding: 15% 10% 15% 10%;
+    padding: 10%;
 }
 
 

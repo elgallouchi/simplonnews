@@ -1,3 +1,10 @@
+let logo = document.querySelector('.logo > a > img');
+console.log(logo)
+
+const logoSimplon = './static/img/logo_simplon_news.png';
+
+logo.src = logoSimplon
+
 // SWITCH page connexion à page inscription
 
 let boutonSInscrire = document.getElementById('inscription')
@@ -35,6 +42,7 @@ inputSubmit.addEventListener('click', function() {
     let inputEmail = document.querySelector("[name=email-connexion]").value;
     let inputPassword = document.querySelector("[name=password-connexion]").value;    
     connexion(inputEmail, inputPassword)
+    validateForm([inputEmail, inputPassword])
 })
 
 function connexion(email, password) {
@@ -55,7 +63,7 @@ fetch("https://simplonews.brianboudrioux.fr/users/login", fetch_config)
         response.json()
         .then(function (data) {
             if (response.status == 400) {
-                alert('Entrer un email et un mot de passe valides')
+                
             }
             else {
                 console.log('OK')
@@ -139,8 +147,12 @@ function validateForm(input_tab) {
     for (let i=0; i< input_tab.length; i++) {
         const element = input_tab[i];
 
-        if (element.value == null || element.value == "")
+        if (element == null || element == "") {
+            alert('Entrer un email et un mot de passe valides')
             return false;
+        }
+     
+
     }
 
     return true;
