@@ -17,8 +17,7 @@ boutonConnexion.addEventListener('click', () => {
 
 
 // Mot de passe oublié
-
-let forgotPassword = document.getElementById('forgot')
+let forgotPassword = document.getElementById('forgot');
 
 forgotPassword.addEventListener('click', () => {
     prompt('Entrez votre adresse email pour recevoir un lien de réinitialisation de votre mot de passe');
