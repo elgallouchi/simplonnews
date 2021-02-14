@@ -28,7 +28,7 @@ article:first-of-type .article-lire a {
 .titre-categorie {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 .search {
   display: flex;
@@ -38,15 +38,18 @@ article:first-of-type .article-lire a {
 .search h4 {
   font-size: 1.2em;
   padding: 0.5em;
+  display: none;
 }
 .search select {
-  padding: 0.5em;
+  padding: 0.7em 2em;
   border: 1px solid #ccc;
   appearance: none;
   font-weight: bold;
   font-size: 1em;
   color: #ce0033;
   border-radius: 3px;
+  outline: none;
+  cursor: pointer;
 }
 article {
   background-color: #fff;
@@ -120,6 +123,8 @@ article {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: -1;
 }
 .ads div {
   font-size: 3em;
@@ -131,6 +136,25 @@ article {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.ads div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ads span {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0px 3px;
+}
+.ads .ads-desktop {
+  display: none;
+}
+.ads .ads-mobile {
+  display: flex;
 }
 
 /* Desktop Version */
@@ -169,7 +193,19 @@ article {
     width: 748px;
     height: 110px;
   }
+  .ads .ads-mobile {
+    display: none;
+  }
+  .ads .ads-desktop {
+    display: flex;
+  }
   .search {
+    flex-direction: row;
+  }
+  .titre-categorie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
   }
 }

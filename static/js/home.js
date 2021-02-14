@@ -2,7 +2,7 @@
 
 let tokenStorage = sessionStorage.getItem('token');
 if (!tokenStorage) {
-    window.location.href = "../index.html"
+    window.location.href = "/index.html"
 }
 
 function addAdsBanner() {
@@ -11,8 +11,10 @@ function addAdsBanner() {
     if (thirdElement) {
         let div = `
         <div class="ads">
+        <span>Ads</span>
             <div>
-                Ads Here !
+                <img class="ads-desktop" src="../img/bitcoin-buy-sell-banner.png" />
+                <img class="ads-mobile" src="../img/money-phone.webp" />
             </div>
         </div>
         `;
@@ -87,7 +89,7 @@ fetch("https://simplonews.brianboudrioux.fr/articles", {
 // Search Form
 function generateSelectHtml(responseCategories) {
     let selectOption = document.querySelector('select[name=categories]');
-    let outCat = '<option> &#9668; Catégories  &#9658;</option>';
+    let outCat = '<option disabled selected value> -- Aller à --</option>';
     responseCategories.forEach(categorie => {
         outCat += `<option value="${categorie.id}" >${categorie.name}</option>`;
     });

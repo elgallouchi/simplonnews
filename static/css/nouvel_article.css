@@ -32,7 +32,7 @@ main .container section {
   font-size: 0.9em;
 }
 .nouvel-article p label span.required-exemple {
-  font-size: .6em;
+  font-size: 0.6em;
   color: #666;
   margin-left: 1em;
 }
@@ -77,7 +77,7 @@ aside {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-}
+  }
   aside div {
     /* background-color: #ff0; */
     width: 100%;
@@ -93,6 +93,9 @@ aside {
   }
   aside div ul {
     list-style: none;
+  }
+  .info-users {
+    font-weight: bold;
   }
   aside div ul li {
     padding: 0.6em 1em;

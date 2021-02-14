@@ -84,3 +84,42 @@ function getData(titre, resume, content, author, img, cat) {
     })
     
 }
+
+
+// top users 
+
+function genereteListUsers(usersArray) {
+
+    if(usersArray.length > 10) {
+        usersArray = usersArray.slice(usersArray.length -10)
+    }
+
+    // let newUsersArray = usersArray.len
+    let ul = document.querySelector('.aside-contenue div ul');
+    let listOut = `<li class="info-users">Utilisateur<span>Id</span></li>`;
+    usersArray.reverse().forEach(user => {
+        let userName = user.email.split('@')[0];
+        listOut += `<li>${userName}<span>${user.id}</span></li>`;
+    })
+    ul.innerHTML = listOut;
+}
+
+function requeteUsers() {
+    let options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + tokenStorage
+        }
+    }
+    fetch("https://simplonews.brianboudrioux.fr/users", options)
+    .then(response => {
+        // console.log(response);
+        response.json()
+        .then(data => {
+            // console.log(data.users);
+            genereteListUsers(data.users)
+        })
+    })
+}
+requeteUsers()
