@@ -1,34 +1,67 @@
-body {
+main {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     background-color: #f0f0f0;
-}
-    
-.container-articles {
-    display: flex;
-    padding: 1% ;
+    margin: 0 auto;
+    width: 80%;
 }
 
+@media screen and (max-width: 815px) {
+    main  {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+}
+
+.container {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 815px) {
+    .container  {
+        max-width: 90%;
+    }
+}
+
+.articleContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 815px) {
+    .articleContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 .articleContent {
     display: flex;
     flex-direction: column;
     max-width: 70%;
-    background-color: white;
-    padding: 1%;
-    font-size:100%;
+
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 2em;
+    border: 2px solid #ce0033;
+    margin-bottom: 2em;
+    font-family: "nunito", sans-serif;
 }
 
-.articleContent > img {
+.articleContent > div > img {
+    min-width: 100%;
     max-width: 100%;
 }
 
 .articleContent > p {
-    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     margin: 1%;
     line-height: 1.5;
     text-align: justify;
-
 }
 
 @media screen and (max-width: 815px) {
@@ -41,32 +74,42 @@ aside {
     display: flex;
     flex-direction: column;
     max-width: 30%;
+    margin-top: 2em;
     margin-left: 3%;
     margin-right: 3%;
+
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: "nunito", sans-serif;
 }
 
 @media screen and (max-width: 815px) {
-    aside {
-        display: none;
+    aside  {
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 0em;
+        margin-left: 0%;
+        margin-right: 0%;
     }
 }
 
-aside > img {
+#asideImg {
     max-width: 100%;
-    margin: 1%;
+    margin: 1%; 
 }
 
 h1 {
     /* titre article */
-    font-size: clamp(2.5rem, 4vw, 4rem); 
+    font-size: clamp(1.5rem, 3vw, 2rem); 
     line-height: 1.2;
     margin: 1%;
-    font-weight: normal;
+    color: #CE0033;
 }
 
 h2 {
     /* resumé article */
-    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     margin: 1%;
     font-weight: normal;
     font-style: italic;
@@ -75,7 +118,7 @@ h2 {
 
 h3 {
     /* author article */
-    font-size: clamp(1.7rem, 2vw, 2.2rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     margin: 1%;
     font-weight: normal;
 }
@@ -86,17 +129,15 @@ h3 > span {
 
 h4 {
     /* titre aside */
-    font-size: clamp(2rem, 2vw, 2.5rem);
-    font-style: italic;
+    color: #CE0033; 
+    font-size: clamp(1rem, 2vw, 1.2rem);
     margin-top: 1%;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+aside a {
+    text-decoration: none;
+
 }
 
-/* h5 {
-   
-    font-size: clamp(1.5rem, 1.5vw, 1.7rem);
-    margin-top: 1%;
-    margin-bottom: 5%;
-    font-weight: normal;
-    font-style: italic;
-    text-align: justify;
-} */
+  
