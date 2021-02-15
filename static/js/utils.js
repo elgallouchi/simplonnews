@@ -75,7 +75,6 @@ window.onload = function () {
 
 
 // favicon 
-
 let head = document.querySelector('head');
 let li = document.createElement('link')
 li.rel = 'icon';

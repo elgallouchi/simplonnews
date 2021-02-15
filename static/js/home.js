@@ -20,6 +20,20 @@ function addAdsBanner() {
         `;
         thirdElement.insertAdjacentHTML("afterend", div);
     }
+
+    let fiveElement = document.querySelector('article:nth-of-type(7)');
+    if (fiveElement) {
+        let div = `
+        <div class="ads">
+        <span>Ads</span>
+            <div>
+                <img class="ads-desktop" src="../img/ads_7.png" />
+                <img class="ads-mobile" src="../img/money-phone.webp" />
+            </div>
+        </div>
+        `;
+        fiveElement.insertAdjacentHTML("afterend", div);
+    }
 }
 // get token
 // let token = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {});
@@ -33,7 +47,7 @@ function generateArticle(responseArticles) {
                 <article>
                     <div class="article-image">
                         <a href="./article.html?id=${article.id}">
-                            <img src="${article.img}"
+                            <img src="${article.img == '' || article.img == null || article.img == 'https://urldunsitequihebergeuneimage.fr/uneimage.jpg' ? '../img/image_not_found.png' : article.img}"
                                 alt="${article.title}" />
                         </a>
                     </div>
@@ -43,6 +57,7 @@ function generateArticle(responseArticles) {
                             <p class="article-description">
                             ${article.resume}
                             </p>
+                            <span>${article.author}</span>
                         </div>
                         <div class="article-lire">
                             <a href="./article.html?id=${article.id}">Lire la suite</a>
@@ -57,32 +72,35 @@ function generateArticle(responseArticles) {
 
 }
 
+function getArticles() {
+    // loading animation 
+    document.querySelector('section').innerHTML = '<div class="loading-articles"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>';
 
-fetch("https://simplonews.brianboudrioux.fr/articles", {
-    method: "GET",
-    headers: {
-        "Authorization": "Bearer " + tokenStorage,
+    fetch("https://simplonews.brianboudrioux.fr/articles", {
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + tokenStorage,
     }
 })
+.then(function (response) {
+    response.json()
     .then(function (response) {
-        response.json()
-            .then(function (response) {
-                if (response.status === 400) {
-                    // window.location.href = "/kilk";
-                } else if (response.status === 403) {
-                    // window.location.href = "/link";
+        if (response.status === 400) {
+            
+        } else if (response.status === 403) {
+            
                 } else {
                     let arrayReversed = response.articles.reverse();
-                    if (!arrayReversed) {
-                        document.querySelector('.container').innerHTML = "attent !";
-                    }
                     generateArticle(response.articles);
                 }
             })
-    })
-    .catch(err => {
-        console.log(err);
-    })
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
+    getArticles()
 
 
 
@@ -128,6 +146,7 @@ function onChangeSelect() {
                 console.log(element.value);
             }
 
+            document.querySelector('section').innerHTML = '<div class="loading-articles"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>';
             fetch("https://simplonews.brianboudrioux.fr/articles/category/" + element.value, {
                 method: "GET",
                 headers: {

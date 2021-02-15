@@ -112,6 +112,7 @@ function requeteUsers() {
             "Authorization": "Bearer " + tokenStorage
         }
     }
+    document.querySelector('aside div div ul').innerHTML = '<div class="loading-users"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>';
     fetch("https://simplonews.brianboudrioux.fr/users", options)
     .then(response => {
         // console.log(response);
