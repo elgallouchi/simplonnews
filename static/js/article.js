@@ -32,7 +32,7 @@ function generateArticle(dataArticles) {
             </div>
         </article>
         `;
-        }
+    }
         if (count < 5) {
             outputAside += `
             <img src="${article.img}" alt=${article.title}">
@@ -59,7 +59,7 @@ function requetteFetch() {
     fetch("https://simplonews.brianboudrioux.fr/articles", options)
         .then(response => response.json()
             .then(data => {
-                generateArticle(data.articles);
+                generateArticle(data.articles.reverse());
             }))
         .catch(err => {
             console.log(err);
