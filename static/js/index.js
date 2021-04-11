@@ -1,7 +1,7 @@
 let tokenStorage = sessionStorage.getItem('token');
 if (tokenStorage) {
     window.location.href = "./static/views/home.html"
-} 
+}
 
 
 let logo = document.querySelector('.logo > a > img');
