@@ -86,11 +86,7 @@ aside {
 
 @media screen and (max-width: 815px) {
     aside  {
-        max-width: 100%;
-        min-width: 100%;
-        margin-top: 0em;
-        margin-left: 0%;
-        margin-right: 0%;
+    display: none;
     }
 }
 
@@ -135,9 +131,27 @@ h4 {
     margin-bottom: 30px;
     text-decoration: none;
 }
+
 aside a {
     text-decoration: none;
 
 }
 
-  
+.btsNextPrev {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+}
+.btsNextPrev a {
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: #ce0033;
+    color: #fff;
+    padding: 1%;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
